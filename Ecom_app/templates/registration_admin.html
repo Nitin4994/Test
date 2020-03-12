@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Registration Page</title>
+</head>
+<body>
+
+<senter><h1>Admin Registration</h1></senter>
+
+{{msg}}<br>
+{{msg2}}
+
+<br><br>
+<a href="http://localhost:5000/admin/home/">Home</a>
+<br><br>
+
+<form action="http://localhost:5000/admin/registration/save/" method="post">
+    Vendor Name: <input type="text" name="name" required><br><br>
+    Address: <input type="text" name="address" required><br><br>
+    Contact No: <input type="text" name="contactno" required><br><br>
+    User Name: <input type="text" name="username" required><br><br>
+    Password: <input type="password" name="password" required><br><br>
+    Confirm Password: <input type="password" name="confirmpassword" required><br><br>
+    <input type="submit" name="register"><br><br>
+
+</form>
+
+<table border="2">
+    <thead>
+        <!--<th>Id</th>-->
+        <th>Vendor Name</th>
+        <th>Address</th>
+        <th>Contact No</th>
+
+    </thead>
+    {% for rginfo in regrinfo %}
+    {% if rginfo.vendRole != 'Admin' %}
+    <tbody>
+        <!--<td>{{rginfo.vendId}}</td>-->
+        <td>{{rginfo.vendName}}</td>
+        <td>{{rginfo.vendAddress}}</td>
+        <td>{{rginfo.vendContact}}</td>
+
+    </tbody>
+    {% endif %}
+    {% endfor %}
+</table>
+
+</body>
+</html>

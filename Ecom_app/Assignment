@@ -1,0 +1,115 @@
+
+User
+	Flipkart	--Admin
+	Amazon		admin
+	yogesh	 - customer
+	yogymax -- customer
+	Ecom -- SuperAdmin
+
+
+UserInfo #master
+	userId  userName  userAge  userAddress  userMobile
+	
+LoginInfo #trsc	1-1
+	loginId  loginName 	password   userId
+	
+	
+User_Role  -- mm
+	user_id  role_id
+	
+Role #master
+	roleId  roleName
+	
+Vendor
+	vid  nm  roleId	
+
+account-- 	11
+	aid  acno  acnm  acbal
+	
+Product
+	id  nam  cat  price  qty
+
+ven_prod -- inventory
+	id  vid  pid
+	
+order
+	id  uid  vid  pid  qty  price
+
+cust_prod -- purchased
+	id  uid  vid  pid  qty  price  totalamount  after_dis_amount
+
+
+	
+	
+
+
+
+		Autheticationdetails
+UserId		Username  	Password  
+
+		UserInfo
+regid	fnm lnm ag adr --- uid  
+								
+
+UserRole
+	1	SuperAdmin
+	2	Admin
+	3	Customer
+	
+	
+user_role
+	uid   rid
+	1		1
+	1		2
+	2		1
+	
+	
+	
+
+
+
+
+
+Product
+
+
+
+
+User
+	Admin -- vendor -- which vendor
+	
+	Customer
+	
+Product
+Vendor
+
+2 record Database--
+		1  admin -- flipkart
+		2  admin -- amazon
+				
+				Add Products
+					product form
+					CRUD -- products
+						
+				
+Register-- 
+Login
+	Customer--
+				Username
+				password
+				ChooseVendor [Flip/AMAZ]
+				Sign
+
+			--- amazon inventory -- 
+					purchase - 
+					
+					
+master -- 
+		superAdmin
+				FLIPK --
+				AMAZ --
+				
+				
+				
+Login
+Register -- Customer

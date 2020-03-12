@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inventory</title>
+</head>
+<body>
+
+<senter><h1>Inventory</h1></senter>
+
+{{msg}}
+<br><br>
+<h4>User Role: {{usertype}}</h4>
+<br><br>
+
+<a href="http://localhost:5000/admin/home/">Home</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<br>
+{{msg2}}
+
+<br><br>
+<form action="http://localhost:5000/add/inventory/" method="post">
+    Available Products List<br><br>
+    <table border="1">
+    <thead>
+        <th>Product Name</th>
+        <th>Qty</th>
+        <th>Price</th>
+    </thead>
+    {% for prod in products %}
+    <tbody>
+        <td>{{prod.prodName}}</td>
+        <td>{{prod.prodQty}}</td>
+        <td>{{prod.prodPrice}}</td>
+    </tbody>
+    {% endfor %}
+</table>
+<br><br>
+    Products: <select name="prodid">
+    <option name="select">--Select--</option>
+    {% for prod in products %}
+    <option name="{{prod.prodId}}" value="{{prod.prodId}}">{{prod.prodName}}</option>
+    {% endfor %}
+</select>
+    <br><br>
+
+
+    <input type="submit" name="submit" value="Add Product"><br><br>
+
+</form>
+
+Vendor Products List:<br><br>
+
+<table border="2">
+    <thead>
+        <th>Product Name</th>
+        <th>Qty</th>
+        <th>Price</th>
+    </thead>
+    {% for vendpro in vendProd %}
+    <tbody>
+        <td>{{vendpro.prodName}}</td>
+        <td>{{vendpro.prodQty}}</td>
+        <td>{{vendpro.prodPrice}}</td>
+    </tbody>
+    {% endfor %}
+</table>
+
+
+
+</body>
+</html>

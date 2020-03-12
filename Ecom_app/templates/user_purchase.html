@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Purchase</title>
+</head>
+<body>
+
+<senter><h1>Purchase Order</h1></senter>
+{{msg}}
+<br>
+<h4>User Name: {{username.userName}}</h4>
+<h4>User Role: {{usertype}}</h4>
+<h4>Vendor: {{get_vend.vendName}}</h4>
+
+<a href="http://localhost:5000/user/dashbord/{{get_vend.vendId}}">Home</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<br><br>
+{{msg}}
+
+{% if page==1 %}
+<br><br>
+Place Your Order:<br>
+Poduct Name : {{prod.prodName}}<br>
+Quantity : {{ord.qty}}<br>
+Price of One Pis : {{ord.price}}<br>
+Amount : {{finalPrice}}<br>
+Discount : {{discount}}<br>
+Final Amount : {{disfinalPrice}}<br>
+<br>
+<a href="http://localhost:5000/user/purchase/place/{{ord.ordId}}">Buy Order</a>
+
+{% endif %}
+
+{% if page==2 %}
+<br><br>
+<h4>Receipt</h4>
+Poduct Name : {{prod.prodName}}<br>
+Quantity : {{ord.qty}}<br>
+Price : {{ord.price}}<br>
+Amount : {{finalPrice}}<br>
+Discount : {{discount}}<br>
+Final Amount : {{disfinalPrice}}<br>
+<br>
+<a href="">Print</a>
+
+{% endif %}
+
+
+
+<br><br>
+
+</body>
+</html>

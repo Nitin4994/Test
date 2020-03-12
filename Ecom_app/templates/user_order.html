@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Orders</title>
+</head>
+<body>
+
+<senter><h1>My Orders</h1></senter>
+{{msg}}
+<br>
+<h4>User Name: {{username.userName}}</h4>
+<h4>User Role: {{usertype}}</h4>
+<h4>Vendor: {{get_vend.vendName}}</h4>
+
+<a href="http://localhost:5000/user/dashbord/{{get_vend.vendId}}">Home</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+
+<br><br>
+Your order list:<br><br>
+<table border="2">
+    <thead>
+        <th>User Name</th>
+        <th>Vendor Name</th>
+        <th>Poduct Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+        <th>Place order</th>
+    </thead>
+
+    {% for or in myordprod %}
+
+        <tbody>
+            <td>{{or.userId}}</td>
+            <td>{{or.vendId}}</td>
+            <td>{{or.prodId}}</td>
+            <td>{{or.qty}}</td>
+            <td>{{or.price}}</td>
+            <td><a href="http://localhost:5000/user/purchase/{{or.ordId}}">Buy Now</a></td>
+        </tbody>
+
+    {% endfor %}
+
+</table>
+
+<br><br>
+Your Buying list:<br><br>
+<table border="2">
+    <thead>
+        <th>User Name</th>
+        <th>Vendor Name</th>
+        <th>Poduct Name</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </thead>
+
+    {% for or in mybuyprod %}
+
+        <tbody>
+            <td>{{or.userId}}</td>
+            <td>{{or.vendId}}</td>
+            <td>{{or.prodId}}</td>
+            <td>{{or.qty}}</td>
+            <td>{{or.price}}</td>
+        </tbody>
+
+    {% endfor %}
+
+</table>
+
+
+
+</body>
+</html>

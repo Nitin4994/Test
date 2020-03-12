@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashbord</title>
+</head>
+<body>
+
+<senter><h1>User Vendor Selection</h1></senter>
+
+{{msg}}
+<br><br>
+<h4>User Name: {{username.userName}}</h4>
+<h4>User Role: {{usertype}}</h4>
+
+<br><br>
+Select Your Vendor:
+<br><br>
+{% for vend in vendors %}
+{% if not vend.vendName=='Admin' %}
+
+<a href="http://localhost:5000/user/dashbord/{{vend.vendId}}">{{vend.vendName}}</a>
+&nbsp;&nbsp;|&nbsp;&nbsp
+
+{% endif %}
+{% endfor %}
+
+<a href="http://localhost:5000/ecomapp/">Logout</a>
+<br><br><br><br>
+
+</body>
+</html>

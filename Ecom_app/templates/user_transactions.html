@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Transactions</title>
+</head>
+<body>
+
+<senter><h1>User Transaction Details</h1></senter>
+
+{{msg}}
+<br>
+<h4>User Name: {{username.userName}}</h4>
+<h4>User Role: {{usertype}}</h4>
+<h4>Vendor: {{get_vend.vendName}}</h4>
+
+<a href="http://localhost:5000/user/dashbord/{{get_vend.vendId}}">Home</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<br><br>
+{{msg}}
+
+<br><br>
+Your Transaction Details:
+<br><br>
+<table border="2">
+    <thead>
+        <th>ID</th>
+        <th>Descriptions</th>
+        <th>Deposit</th>
+        <th>Withdrawal</th>
+        <th>Ava Balance</th>
+    </thead>
+    {% for tr in tran %}
+    <tbody>
+        <td></td>
+        <td>{{tr.traDesc}}</td>
+        {% if tr.deposit==None %}
+                <td>--</td>
+            {% else %}
+                <td>{{tr.deposit}}</td>
+        {% endif %}
+
+        {% if tr.withdrawal==None %}
+                <td>--</td>
+            {% else %}
+                <td>{{tr.withdrawal}}</td>
+        {% endif %}
+        <td>{{tr.totBal}}</td>
+    </tbody>
+    {% endfor %}
+</table>
+<br><br>
+
+
+<br><br>
+
+</body>
+</html>

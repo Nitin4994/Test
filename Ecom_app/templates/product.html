@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Product</title>
+</head>
+<body>
+
+<senter><h1>Products</h1></senter>
+
+{{msg}}
+
+<br><br>
+<a href="http://localhost:5000/admin/home/">Home</a>
+<br><br>
+
+<form action="http://localhost:5000/add/product/" method="post">
+    Product Name: <input type="text" name="prodname"><br><br>
+    Category: <input type="text" name="prodcat"><br><br>
+    Quantity: <input type="text" name="prodqty"><br><br>
+    Price: <input type="text" name="prodprice"><br><br>
+    <input type="submit" name="submit"><br><br>
+
+</form>
+{{msg2}}
+
+<table border="2">
+    <thead>
+        <th>Id</th>
+        <th>Product Name</th>
+        <th>Category</th>
+        <th>Quantity</th>
+        <th>Price</th>
+    </thead>
+    {% for pr in prod %}
+    <tbody>
+        <td>{{pr.prodId}}</td>
+        <td>{{pr.prodName}}</td>
+        <td>{{pr.prodCategory}}</td>
+        <td>{{pr.prodQty}}</td>
+        <td>{{pr.prodPrice}}</td>
+    </tbody>
+    {% endfor %}
+</table>
+
+</body>
+</html>

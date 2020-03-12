@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration Page</title>
+</head>
+<body>
+
+<senter><h1>Registration</h1></senter>
+
+{{msg}}
+
+<br><br>
+<a href="http://localhost:5000/ecomapp/">Home |</a>
+&nbsp;&nbsp;
+<a href="http://localhost:5000/ecomapp/">Login</a>
+<br><br>
+
+
+<form action="http://localhost:5000/user/registration/" method="post">
+    Name: <input type="text" name="name" required><br><br>
+    Age: <input type="text" name="age" required><br><br>
+    Address: <input type="text" name="address" required><br><br>
+    Contact No: <input type="text" name="contactno" required><br><br>
+    User Name: <input type="text" name="username" required><br><br>
+    Password: <input type="password" name="password" required><br><br>
+    Confirm Password: <input type="password" name="confirmpassword" required><br><br>
+    <input type="submit" name="register" title="Register here"><br><br>
+
+</form>
+
+
+<br><br><br><br>
+
+
+
+</body>
+</html>

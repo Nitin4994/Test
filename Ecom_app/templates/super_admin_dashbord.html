@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Dashbord</title>
+</head>
+<body>
+
+<senter><h1>Admin Dashbord</h1></senter>
+
+{{msg}}
+<br><br>
+<h4>User Role: {{usertype}}</h4>
+<br><br>
+
+<a href="http://localhost:5000/admin/home/">Home</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+
+{% if usertype == 'Admin' %}
+
+<a href="http://localhost:5000/admin/registration/">Vendor Registration</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="http://localhost:5000/product/">Products</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+{% endif %}
+
+{% if usertype == 'Vendor' %}
+
+<a href="http://localhost:5000/inventory/">Inventory</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="http://localhost:5000/vendor/account/">Account</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+
+{% endif %}
+
+<a href="http://localhost:5000/vend/transactions/">My Transactions</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="http://localhost:5000/ecomapp/">Logout</a>
+
+
+
+
+</body>
+</html>

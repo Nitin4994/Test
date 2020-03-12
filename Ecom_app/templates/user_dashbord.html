@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>User Dashbord</title>
+</head>
+<body>
+
+<senter><h1>User Dashbord</h1></senter>
+{{msg}}
+<br>
+<h4>User Name: {{username.userName}}</h4>
+<h4>User Role: {{usertype}}</h4>
+<h4>Vendor: {{get_vend.vendName}}</h4>
+
+<a href="http://localhost:5000/user/dashbord/{{get_vend.vendId}}">Home</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="http://localhost:5000/user/product/">Products</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="http://localhost:5000/user/order/">My Orders</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="http://localhost:5000/user/transactions/">My Transactions</a>
+&nbsp;&nbsp;|&nbsp;&nbsp;
+<a href="http://localhost:5000/ecomapp/">Logout</a>
+<br><br><br><br>
+
+</body>
+</html>
